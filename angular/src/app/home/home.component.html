@@ -1,0 +1,28 @@
+<div class='col-s-12 mar-l-t'>
+  <app-header></app-header>
+</div>
+
+<div class='height col-s-12 col-12 mar mar-l'>
+  <!-- <div class=' text-center'> -->
+  <form #sityForm='ngForm' (ngSubmit)='sityFormsData(sityForm)' return='falce'>
+    <!-- <div class='col-s-12'> -->
+    <div>
+      <label class='label label-l center-l'>Enter a name of a sity and press search:</label>
+    </div>
+    <div class='center center-l'>
+
+      <input class='inputText inputText-l ' name='sity' type='text' [(ngModel)]='input' required>
+
+    </div>
+    <!-- </div> -->
+    <div *ngIf='isError' class='error col-12 center-text-l center-text'>
+      <h1>There is no such city</h1>
+    </div>
+    <div class='center '>
+      <div class='center, center-l mid'>
+        <button class=' btn btn-l' [disabled]='!input'>Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- </div> -->

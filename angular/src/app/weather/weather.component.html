@@ -1,0 +1,72 @@
+<div *ngIf='!(isMobile && switch) ; else forecastTemplate'>
+  <div class='col-s-12 col-7 pad-top-l-0 marg-l-10'>
+    <app-header></app-header>
+  </div>
+
+  <div class="font-size-3 col-s-4 marg-left-10 col-7 font-size-4 pad-bottom-0 pad-bottom-l-0">
+    {{weather.name}}
+  </div>
+  <div class="col-s-1 col-1 mar-left-13 pad-bottom-0 pad-right-l-0 pad-bottom-l-0">
+    <img src={{weather.icon}} class='icon icon-l' />
+  </div>
+
+  <div class="col-s-2 col-1 font-size-3 font-size-4 text-al-right pad-bottom-0 pad-bottom-l-0">
+    {{weather.temp}}&deg;
+  </div>
+
+
+  <div class="dateTime col-s-12 col-5 font-size-l-2 pad-left-l-11 pad-top-l-0">{{weather.dateTime}}</div>
+  <div class='text col-s-12 col-4 font-size-l-2 pad-top-l-0 text-al-right-l'>{{weather.text}}</div>
+
+
+
+
+
+</div>
+<ng-template #forecastTemplate>
+  <div class='col-s-12 font-size-3'>
+    Forecast
+  </div>
+  <div class='col-s-12 pad-top-0'>
+    <div class='col-s-5 font-size-2'>{{weather.name}}</div>
+    <div class=' col-s-4 font-size-1 text-al-right pad-top-8'>next 7 days</div>
+  </div>
+
+</ng-template>
+<div class='switch-l' *ngIf='!isMobile'>
+  <!-- <div class='col-3'> -->
+  <a [ngClass]="{'active': !switch}" (click)="switch && show()" class="top-btn-l col-3">Today</a>
+  <!-- </div> -->
+  <!-- <div class='col-3'> -->
+  <a [ngClass]="{'active': switch}" (click)="!switch && show()" class="top-btn-l col-3">7 days forecast</a>
+  <!-- </div> -->
+</div>
+<div class='font-size-1 font-size-l-1' *ngIf='!switch'>
+  <div class="col-s-7  col-3 marg-left-30-l marg-top-10 marg-top-5-l">
+    Feels like
+  </div>
+  <div class="col-s-2  mar-left-6 col-1 text-al-right marg-top-10 text-al-right-l marg-top-5-l">{{weather.fiels}}&deg;</div>
+  <div class="col-s-7 col-3 marg-left-30-l">
+    Wind
+  </div>
+  <div class="col-s-2 col-1 mar-left-6 text-al-right text-al-right-l">{{weather.wind}}km/h</div>
+  <div class="humidity col-s-7 col-3 marg-left-30-l">
+    Humidity
+  </div>
+  <div class="col-s-2 col-1 mar-left-6 text-al-right text-al-right-l">{{weather.humidity}}%</div>
+</div>
+
+
+<div class='col-3 col-s-12' *ngIf='isMobile && !switch'>
+  <button [ngClass]="{'active': switch}" (click)="!switch && show()" class="top-btn">7 days forecast</button>
+</div>
+
+<div *ngIf='switch'>
+  <div *ngFor='let day of forecastDay'>
+    <app-forecast [infoDays]=day></app-forecast>
+  </div>
+</div>
+
+<div class='col-3 col-s-12' *ngIf='isMobile && switch'>
+  <button [ngClass]="{'active': !switch}" (click)="switch && show()" class="top-btn-today ">Today</button>
+</div>

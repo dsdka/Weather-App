@@ -1,0 +1,94 @@
+@media only screen and (min-width: 768px) {
+  .name-l {
+    display: inline-block;
+    margin-left: 0px;
+    font-size: 5em;
+  }
+  .icon-l {
+    /* padding-right: 0px; */
+    width: 80px;
+    height: 80px;
+    float: right;
+  }
+  .switch-l {
+    width: 50%;
+    margin-left: 30%;
+    border-bottom: 1px solid rgb(201, 201, 201);
+  }
+  .top-btn-l:hover {
+    color: #4d4d4d;
+    background-color: silver;
+  }
+  .switch-l a:first-child {
+    border-right: 1px solid rgb(201, 201, 201);
+  }
+  .top-btn-l {
+    padding: 1% 7%;
+    border: 2px solid rgb(201, 201, 201);
+    /* font-size: 0.8em; */
+    color: rgb(194, 194, 194);
+    cursor: pointer;
+    text-align: center;
+    background-color: rgb(250, 245, 245);
+    margin-bottom: 7%;
+  }
+  .marg-l-10 {
+    margin-left: 38%;
+  }
+  .font-size-4 {
+    font-size: 4em;
+  }
+  .pad-right-l-0 {
+    padding-right: 0px;
+  }
+  /* ===================================== */
+  /* CSS for display */
+  /* ===================================== */
+}
+
+/* .proba {
+  background-color: aquamarine;
+  height: 500px;
+  width: 800px;
+  margin: auto;
+  display: block;
+} */
+
+@media only screen and (max-width: 767px) {
+  .icon {
+    padding-right: 0px;
+    width: 60px;
+    height: 52px;
+  }
+  .dateTime {
+    padding-top: 0px;
+    font-size: 1.1em;
+    padding-left: 5%;
+    padding-bottom: 0px;
+  }
+  .text {
+    font-size: 1.4em;
+    padding-top: 0px;
+    padding-left: 5%
+  }
+  .switch {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid rgb(201, 201, 201);
+  }
+  a:first-child {
+    border-right: 1px solid rgb(201, 201, 201);
+  }
+  .top-btn {
+    padding: 3% 15%;
+    font-size: 0.8em;
+    cursor: pointer;
+    margin-left: 15%
+  }
+  .top-btn-today {
+    padding: 3% 15%;
+    font-size: 0.8em;
+    cursor: pointer;
+    margin-left: 23%
+  }
+}

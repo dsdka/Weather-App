@@ -1,0 +1,31 @@
+@media only screen and (min-width: 768px) {
+  .img-l-f {
+    width: 30px;
+    height: 30px;
+    padding-right: 0px;
+    float: right;
+  }
+}
+
+/* ===================================== */
+
+/* CSS for display */
+
+/* ===================================== */
+
+@media only screen and (max-width: 767px) {
+  .img {
+    width: 30px;
+    height: 25px;
+    padding-right: 0px;
+  }
+  .pad-top-4 {
+    padding-top: 4%;
+  }
+  .pad-right-0 {
+    padding-right: 0px;
+  }
+  .mar-left-14 {
+    margin-left: 14%;
+  }
+}
