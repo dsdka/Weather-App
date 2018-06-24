@@ -33,7 +33,7 @@
   </div>
 
 </ng-template>
-<div class='switch-l' *ngIf='!isMobile'>
+<div class='switch-l hide-s'>
   <!-- <div class='col-3'> -->
   <a [ngClass]="{'active': !switch}" (click)="switch && show()" class="top-btn-l col-3">Today</a>
   <!-- </div> -->
@@ -57,7 +57,7 @@
 </div>
 
 
-<div class='col-3 col-s-12' *ngIf='isMobile && !switch'>
+<div class='col-3 col-s-12 hide' *ngIf=' !switch'>
   <button [ngClass]="{'active': switch}" (click)="!switch && show()" class="top-btn">7 days forecast</button>
 </div>
 
@@ -67,6 +67,6 @@
   </div>
 </div>
 
-<div class='col-3 col-s-12' *ngIf='isMobile && switch'>
+<div class='col-3 col-s-12 hide' *ngIf='switch'>
   <button [ngClass]="{'active': !switch}" (click)="switch && show()" class="top-btn-today ">Today</button>
 </div>

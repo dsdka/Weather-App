@@ -15,12 +15,29 @@
 
     </div>
     <!-- </div> -->
-    <div *ngIf='isError' class='error col-12 center-text-l center-text'>
+    <!-- <div *ngIf='isError' class='error col-12 center-text-l center-text'>
       <h1>There is no such city</h1>
+    </div> -->
+    <div class='col-s-12 col-12 center-text-l center-text'>
+      <img src="https://i1.wp.com/cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif" *ngIf="loading" />
     </div>
+    <div class='col-12 col-s-12 center-text center-text-l font-size-l-1 font-size-1'> Last five seaches:</div>
+    <ul>
+      <li class='col-12 col-s-12 li li-l marg-top-l-0 mar-left-0' col-12 *ngFor='let search of searches' (click)=' searchFunc(search.sity)'>
+        <div class='col-s-3 col-3 mar-left-25 marg-top-0 pad-top-l-0 pad-bottom-l-0 hover pad-left-0'>{{search.sity}}</div>
+        <div class='col-s-5 col-3 marg-top-0 pad-top-l-0  pad-bottom-l-0'>{{search.time}}</div>
+        <div>
+          <hr class='width-76 mar-left-0 width-50-l pad-left-0'>
+        </div>
+      </li>
+
+    </ul>
+
+
+
     <div class='center '>
       <div class='center, center-l mid'>
-        <button class=' btn btn-l' [disabled]='!input'>Search</button>
+        <button class=' btn btn-l hover' [disabled]='!input'>Search</button>
       </div>
     </div>
   </form>

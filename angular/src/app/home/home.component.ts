@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { DataService } from '../core/data.service';
 import { HeaderComponent } from '../header/header.component';
 import { WeatherService } from '../core/weather.service';
+import { StorageService } from '../core/storage.service';
+
 
 @Component({
   selector: 'app-home',
@@ -13,31 +15,44 @@ import { WeatherService } from '../core/weather.service';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private dataService: DataService,
-    private weatherService: WeatherService) { }
+    private weatherService: WeatherService, private storageService: StorageService) { }
 
   public innerWidth: number;
-  public sity;
+  public sity: string;
   public data;
   public isError = false;
   public input;
+  public loading: boolean;
+  public searches;
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
     this.dataService.innerWidth = this.innerWidth;
+    this.searches = this.storageService.getSearch();
+    // console.log('local' + this.searches);
+
+
   }
 
   sityFormsData(sityForm: NgForm) {
-    this.sity = sityForm.value;
-    console.log(this.sity);
+
+    this.sity = sityForm.value.sity;
     sityForm.resetForm();
-    this.weatherService.getWeather(this.sity.sity).subscribe(res => {
+    this.searchFunc(this.sity);
+  }
+
+  searchFunc(sityName: string) {
+    this.loading = true;
+    this.weatherService.getWeather(sityName).subscribe(res => {
       this.data = res;
       this.dataService.serviceData = this.data;
+      this.loading = false;
       this.router.navigate(['weather-now']);
     },
       (err) => {
-        this.isError = true;
+        this.dataService.serverStatus = err.status;
+        this.loading = false;
+        this.router.navigate(['error']);
       });
   }
 

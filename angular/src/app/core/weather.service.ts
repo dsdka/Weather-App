@@ -9,7 +9,7 @@ export class WeatherService {
   private ROOT_URL = 'http://api.apixu.com/v1/forecast.json?key=29d83fa2298a47d29bb121845161212&days=7&q=';
   constructor(private http: HttpClient) { }
 
-  getWeather(sity): Observable<any> {
+  getWeather(sity: string): Observable<any> {
     const rout = this.ROOT_URL + sity;
     return this.http.get(rout);
   }

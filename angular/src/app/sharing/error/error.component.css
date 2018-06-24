@@ -1,0 +1,39 @@
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.mar-5 {
+  margin: 5%;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn-l {
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    padding: 0.7em;
+    width: 30%;
+    box-sizing: border-box;
+    /* margin-left: 35%; */
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .btn {
+    font-size: 1.2em;
+    margin-top: 80%;
+    padding: 5% 15%;
+    width: 100%;
+    /* box-sizing: border-box; */
+  }
+  .mid {
+    width: 80%;
+    margin: auto;
+    display: block;
+    box-sizing: border-box;
+  }
+}

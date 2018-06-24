@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { WeatherModule } from './weather/weather.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SharingModule } from './sharing/sharing.module';
+import { LocalStorageModule } from '@ngx-pwa/local-storage';
+// import { ErrorComponent } from './error/error.component';
 // import { ForecastComponent } from './forecast/forecast.component';
 // import { HeaderComponent } from './header/header.component';
 
@@ -18,6 +21,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
+    // ErrorComponent,
     // ForecastComponent,
     // HeaderComponent
   ],
@@ -28,6 +32,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     WeatherModule,
     CoreModule,
     HttpClientModule,
+    SharingModule,
+    LocalStorageModule,
   ],
   exports: [
     // HeaderComponent,

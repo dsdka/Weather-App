@@ -4,6 +4,10 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
+.hover {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
   .col-1 {
     width: 8.33%;
@@ -103,6 +107,9 @@ body {
   .font-size-l-2 {
     font-size: 2em;
   }
+  .font-size-l-5 {
+    font-size: 5em;
+  }
   .font-size-l-1 {
     font-size: 1.6em;
   }
@@ -126,6 +133,9 @@ body {
   }
   .width-50-l {
     width: 52%
+  }
+  .hide {
+    display: none;
   }
 }
 
@@ -193,9 +203,6 @@ body {
   .error {
     color: red;
   }
-  /* div {
-  border: 1px solid red;
-} */
   .center-text {
     text-align: center;
   }
@@ -246,5 +253,8 @@ body {
   }
   .pad-left-0 {
     padding-left: 0px;
+  }
+  .hide-s {
+    display: none;
   }
 }

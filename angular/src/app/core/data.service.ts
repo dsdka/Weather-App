@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   constructor() { }
-  serviceData = {};
+  serviceData = undefined;
   innerWidth: number;
+  serverStatus: number;
 }
